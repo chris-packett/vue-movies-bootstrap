@@ -1,5 +1,9 @@
 <template>
     <nav class="navbar sticky-top navbar-dark bg-dark mb-5">
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
         <span class="navbar-brand">
             <img src="../../assets/logo.png" alt="logo" width="40">
             <span class="ml-1">Movies</span>
