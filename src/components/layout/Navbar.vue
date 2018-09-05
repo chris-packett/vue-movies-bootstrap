@@ -1,7 +1,7 @@
 <template>
     <nav class="navbar sticky-top navbar-dark bg-dark mb-5">
-        <form class="form-inline">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+        <form class="form-inline" v-on:submit.prevent="processUserInput">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search" v-model="userInput">
             <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
         <span class="navbar-brand">
@@ -18,6 +18,18 @@
 
 <script>
 export default {
-    name: "navbar"
+    name: "navbar",
+    data: function () {
+        return {
+            userInput: ''
+        }
+    },
+    methods: {
+        processUserInput: function () {
+            console.log('firing', this.userInput)
+            this.$emit('process-user-input', this.userInput)
+            this.userInput = ''
+        }
+    }
 }
 </script>

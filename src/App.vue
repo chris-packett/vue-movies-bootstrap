@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Navbar />
+    <Navbar v-on:process-user-input="updateSearchTerm"/>
     <Movies :movies="movies"/>
   </div>
 </template>
@@ -17,7 +17,8 @@ export default {
   },
   data: function () {
     return {
-      movies: []
+      movies: [],
+      searchTerm: ''
     }
   },
   mounted: function () {
@@ -28,6 +29,12 @@ export default {
     .then(movieData => {
       this.movies = movieData.results
     })
+  },
+  methods: {
+    updateSearchTerm: function (userInput) {
+      console.log('received', userInput)
+      this.searchTerm = userInput
+    }
   }
 }
 </script>
