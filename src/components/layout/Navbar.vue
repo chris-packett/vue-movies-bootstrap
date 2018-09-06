@@ -26,7 +26,6 @@ export default {
     },
     methods: {
         processUserInput: function () {
-            console.log('firing', this.userInput)
             this.$emit('process-user-input', this.userInput)
             this.userInput = ''
         }
