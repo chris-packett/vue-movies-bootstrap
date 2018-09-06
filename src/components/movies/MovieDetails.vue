@@ -20,7 +20,7 @@
             <strong>Adult Film</strong>: {{ isAdultMovie(movie.adult) }}
         </li>
         <li class="list-group-item">
-            <strong>Release Date</strong>: {{ movie.release_date }}
+            <strong>Release Date</strong>: <span>{{ movie.release_date | moment("dddd, MMMM Do YYYY") }}</span>
         </li>
     </ul>
 </div>
