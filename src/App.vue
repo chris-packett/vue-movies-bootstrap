@@ -52,10 +52,16 @@ export default {
   },
   computed: {
     myProps: function () {
-      if (this.$route.matched[0].components.default.name === 'movies') {
+      let { name } = this.$route.matched[0].components.default
+      if (name === 'movies') {
         return {
           movies: this.movies,
           header: this.header
+        }
+      }
+      else if (name === 'movie-details') {
+        return {
+          movies: this.movies
         }
       }
     }

@@ -12,7 +12,9 @@
     class="d-flex align-self-center"
     >
     <div class="card-body text-center">
-        <button class="btn btn-outline-dark btn-lg">View Movie Details</button>
+        <router-link :to="'/movie/' + movie.id">
+            <button class="btn btn-outline-dark btn-lg">View Movie Details</button>
+        </router-link>
     </div>
 </div>
 </template>
