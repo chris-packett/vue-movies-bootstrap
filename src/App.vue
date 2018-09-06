@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <Navbar v-on:process-user-input="updateSearchTerm"/>
-    <Movies :movies="movies" :header="header"/>
+    <router-view v-bind="myProps"></router-view>
   </div>
 </template>
 
@@ -48,6 +48,16 @@ export default {
         this.movies = searchedMovieData.results
         this.header = 'Search results for movies related to ' + this.searchTerm
       })
+    }
+  },
+  computed: {
+    myProps: function () {
+      if (this.$route.matched[0].components.default.name === 'movies') {
+        return {
+          movies: this.movies,
+          header: this.header
+        }
+      }
     }
   }
 }
