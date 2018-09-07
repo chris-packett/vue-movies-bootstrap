@@ -24,7 +24,7 @@
         </li>
     </ul>
 
-    <CastMembers />
+    <CastMembers :movieId="id"/>
 </div>
 </template>
 

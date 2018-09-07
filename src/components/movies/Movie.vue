@@ -27,7 +27,7 @@ export default {
     },
     methods: {
         getImageURL: function(imagePath) {
-            return 'https://image.tmdb.org/t/p/w500' + imagePath
+            return imagePath ? 'https://image.tmdb.org/t/p/w500' + imagePath : '/assets/logo.png'
         }
     }
 }
