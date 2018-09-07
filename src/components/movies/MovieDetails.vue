@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <ul class="list-group mt-3">
+    <ul class="list-group mt-3 mb-4">
         <li class="list-group-item">
             <strong>Adult Film</strong>: {{ isAdultMovie }}
         </li>
@@ -23,12 +23,19 @@
             <strong>Release Date</strong>: <span>{{ currentMovie.release_date | moment("dddd, MMMM Do YYYY") }}</span>
         </li>
     </ul>
+
+    <CastMembers />
 </div>
 </template>
 
 <script>
+import CastMembers from '../people/CastMembers.vue'
+
 export default {
     name: 'movie-details',
+    components: {
+        CastMembers
+    },
     data: function () {
         return {
             id: this.$route.params.id,
