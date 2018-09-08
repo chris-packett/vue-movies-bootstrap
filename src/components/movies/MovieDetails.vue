@@ -38,8 +38,7 @@ export default {
     },
     data: function () {
         return {
-            id: this.$route.params.id,
-            movie:{}
+            id: this.$route.params.id
         }
     },
     props: {

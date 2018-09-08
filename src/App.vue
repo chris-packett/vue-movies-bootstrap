@@ -64,6 +64,11 @@ export default {
           movies: this.movies
         }
       }
+      // else if (name === 'cast-member-details') {
+      //   return {
+      //     castMembers: 
+      //   }
+      // }
     }
   }
 }

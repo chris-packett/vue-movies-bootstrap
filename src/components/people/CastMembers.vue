@@ -34,7 +34,6 @@ export default {
             fetch(URL)
             .then(resp => resp.json())
             .then(castData => {
-                console.log(castData)
                 this.castMembers = castData.cast
             })
         }

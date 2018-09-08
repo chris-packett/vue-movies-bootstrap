@@ -12,7 +12,9 @@
         class="d-flex align-self-center"
         >
         <div class="card-body text-center">
-            <button class="btn btn-outline-dark btn-lg">See Other Movies</button>
+            <router-link :to="'/cast-member/' + member.id">
+                <button class="btn btn-outline-dark btn-lg">See Other Movies</button>
+            </router-link>
         </div>
     </div>
 </template>
@@ -37,6 +39,6 @@ img {
 }
 </style>
 
-        //    <router-link :to="'/castmember/' + member.id">
+        //    <router-link :to="'/cast-member/' + member.id">
         //         <button class="btn btn-outline-dark btn-lg">See Other Movies</button>
         //     </router-link>
