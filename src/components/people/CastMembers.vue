@@ -21,7 +21,7 @@ export default {
         movieId: String
     },
     mounted: function () {
-        this.fetchCastData();
+        this.getCast();
     },
     data: function () {
         return {
@@ -29,13 +29,13 @@ export default {
         }
     },
     methods: {
-        fetchCastData: function () {
+        getCast: function () {
             const API_KEY = '39df1c4c7a287510f53854893ba3d788';
             let URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${API_KEY}`;
             fetch(URL)
             .then(resp => resp.json())
-            .then(castData => {
-                this.castMembers = castData.cast;
+            .then(resp => {
+                this.castMembers = resp.cast;
             })
         }
     }
