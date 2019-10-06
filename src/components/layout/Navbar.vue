@@ -19,13 +19,13 @@
 <script>
 export default {
     name: "navbar",
-    data: function () {
+    data() {
         return {
             userInput: ''
         }
     },
     methods: {
-        processUserInput: function () {
+        processUserInput() {
             this.$emit('process-user-input', this.userInput);
             this.userInput = '';
         }

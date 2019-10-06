@@ -6,7 +6,7 @@
 <script>
 export default {
     name: "cast-member-details",
-    data: function () {
+    data() {
         return {
             id: this.$route.params.id
         }
@@ -15,7 +15,7 @@ export default {
         castMembers: Array
     },
     computed: {
-        currentCastMember: function () {
+        currentCastMember() {
             return this.castMembers
                 .find(castMember => castMember.id == this.id);
         }

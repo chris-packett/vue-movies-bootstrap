@@ -36,7 +36,7 @@ export default {
     components: {
         CastMembers
     },
-    data: function () {
+    data() {
         return {
             id: this.$route.params.id
         }
@@ -45,11 +45,11 @@ export default {
         movies: Array
     },
     computed: {
-        currentMovie : function () {
+        currentMovie() {
             return this.movies
                 .find(movie => movie.id == this.id);
         }, 
-        isAdultMovie: function () {
+        isAdultMovie() {
              return this.currentMovie.adult 
                 ? 'Yes' 
                 : 'No';

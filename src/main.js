@@ -9,7 +9,7 @@ Vue.use(require('vue-moment'));
 const router = new VueRouter({
   mode: 'history',
   routes: routes,
-  scrollBehavior () {
+  scrollBehavior() {
     return { x: 0, y: 0 }
   }
 });

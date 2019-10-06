@@ -20,16 +20,16 @@ export default {
     props: {
         movieId: String
     },
-    mounted: function () {
+    mounted() {
         this.getCast();
     },
-    data: function () {
+    data() {
         return {
             castMembers: []
         }
     },
     methods: {
-        getCast: function () {
+        getCast() {
             const API_KEY = '39df1c4c7a287510f53854893ba3d788';
             let URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${API_KEY}`;
             fetch(URL)
@@ -41,5 +41,3 @@ export default {
     }
 }
 </script>
-
-

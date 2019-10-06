@@ -15,22 +15,22 @@ export default {
     Navbar,
     Movies
   },
-  data: function () {
+  data() {
     return {
       movies: [],
       searchTerm: '',
       header: 'Trending Movies'
     }
   },
-  mounted: function () {
+  mounted() {
     this.getMovies();
   },
   methods: {
-    updateSearchTerm: function (userInput) {
+    updateSearchTerm(userInput) {
       this.searchTerm = userInput;
       this.searchMovies();
     },
-    getMovies: function () {
+    getMovies() {
       let URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.VUE_APP_API_KEY}&language=en-US&page=1`;
       fetch(URL)
       .then(resp => resp.json())
@@ -38,7 +38,7 @@ export default {
         this.movies = resp.results
       })
     },
-    searchMovies: function () {
+    searchMovies() {
       let URL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.VUE_APP_API_KEY}&language=en-US&query=${this.searchTerm}&page=1&include_adult=false`;
       fetch(URL)
       .then(resp => resp.json())
@@ -49,15 +49,15 @@ export default {
     }
   },
   computed: {
-    myProps: function () {
+    myProps() {
       let { name } = this.$route.matched[0].components.default;
+
       if (name === 'movies') {
         return {
           movies: this.movies,
           header: this.header
         }
-      }
-      else if (name === 'movie-details') {
+      } else if (name === 'movie-details') {
         return {
           movies: this.movies
         }

@@ -28,7 +28,7 @@ export default {
         member: Object
     },
     methods: {
-        getImageURL: function(imagePath) {
+        getImageURL(imagePath) {
             return imagePath 
                 ? 'https://image.tmdb.org/t/p/w500' + imagePath 
                 : '/assets/logo.png';
