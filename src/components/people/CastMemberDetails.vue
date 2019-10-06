@@ -1,6 +1,5 @@
 <template>
     <div>
-        <!-- {{ id }} -->
     </div>
 </template>
 
@@ -17,7 +16,8 @@ export default {
     },
     computed: {
         currentCastMember: function () {
-            return this.castMembers.filter(castMember => castMember.id == this.id)[0]
+            return this.castMembers
+                .find(castMember => castMember.id == this.id);
         }
     }
 }

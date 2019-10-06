@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import CastMembers from '../people/CastMembers.vue'
+import CastMembers from '../people/CastMembers.vue';
 
 export default {
     name: 'movie-details',
@@ -46,10 +46,13 @@ export default {
     },
     computed: {
         currentMovie : function () {
-            return this.movies.filter(movie => movie.id == this.id)[0]
+            return this.movies
+                .find(movie => movie.id == this.id);
         }, 
         isAdultMovie: function () {
-             return this.currentMovie.adult ? 'Yes' : 'No'
+             return this.currentMovie.adult 
+                ? 'Yes' 
+                : 'No';
         }
     }
 }

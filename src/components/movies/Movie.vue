@@ -13,7 +13,9 @@
     >
     <div class="card-body text-center">
         <router-link :to="'/movie/' + movie.id">
-            <button class="btn btn-outline-dark btn-lg">View Movie Details</button>
+            <button class="btn btn-outline-dark btn-lg">
+                View Movie Details
+            </button>
         </router-link>
     </div>
 </div>
@@ -27,7 +29,9 @@ export default {
     },
     methods: {
         getImageURL: function(imagePath) {
-            return imagePath ? 'https://image.tmdb.org/t/p/w500' + imagePath : '/assets/logo.png'
+            return imagePath 
+                ? 'https://image.tmdb.org/t/p/w500' + imagePath 
+                : '/assets/logo.png';
         }
     }
 }

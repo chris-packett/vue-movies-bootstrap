@@ -13,7 +13,9 @@
         >
         <div class="card-body text-center">
             <router-link :to="'/cast-member/' + member.id">
-                <button class="btn btn-outline-dark btn-lg">See Other Movies</button>
+                <button class="btn btn-outline-dark btn-lg">
+                    See Other Movies
+                </button>
             </router-link>
         </div>
     </div>
@@ -27,7 +29,9 @@ export default {
     },
     methods: {
         getImageURL: function(imagePath) {
-            return imagePath ? 'https://image.tmdb.org/t/p/w500' + imagePath : '/assets/logo.png'
+            return imagePath 
+                ? 'https://image.tmdb.org/t/p/w500' + imagePath 
+                : '/assets/logo.png';
         }
     }
 }
@@ -38,7 +42,3 @@ img {
     border-radius: .5em;
 }
 </style>
-
-        //    <router-link :to="'/cast-member/' + member.id">
-        //         <button class="btn btn-outline-dark btn-lg">See Other Movies</button>
-        //     </router-link>

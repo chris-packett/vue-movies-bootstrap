@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Movie from './Movie.vue'
+import Movie from './Movie.vue';
 
 export default {
     name: "movies",
@@ -23,4 +23,3 @@ export default {
     }
 }
 </script>
-

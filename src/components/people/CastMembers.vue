@@ -10,7 +10,8 @@
 </template>
 
 <script>
-import CastMember from './CastMember.vue'
+import CastMember from './CastMember.vue';
+
 export default {
     name: "cast-members",
     components: {
@@ -20,7 +21,7 @@ export default {
         movieId: String
     },
     mounted: function () {
-        this.fetchCastData()
+        this.fetchCastData();
     },
     data: function () {
         return {
@@ -29,12 +30,12 @@ export default {
     },
     methods: {
         fetchCastData: function () {
-            const API_KEY = '39df1c4c7a287510f53854893ba3d788'
-            let URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${API_KEY}`
+            const API_KEY = '39df1c4c7a287510f53854893ba3d788';
+            let URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${API_KEY}`;
             fetch(URL)
             .then(resp => resp.json())
             .then(castData => {
-                this.castMembers = castData.cast
+                this.castMembers = castData.cast;
             })
         }
     }

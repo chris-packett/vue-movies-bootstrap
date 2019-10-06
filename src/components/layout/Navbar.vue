@@ -26,8 +26,8 @@ export default {
     },
     methods: {
         processUserInput: function () {
-            this.$emit('process-user-input', this.userInput)
-            this.userInput = ''
+            this.$emit('process-user-input', this.userInput);
+            this.userInput = '';
         }
     }
 }
