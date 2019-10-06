@@ -30,8 +30,8 @@ export default {
     },
     methods: {
         getCast() {
-            const API_KEY = '39df1c4c7a287510f53854893ba3d788';
-            let URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${API_KEY}`;
+            const URL = `https://api.themoviedb.org/3/movie/${this.movieId}/credits?api_key=${process.env.VUE_APP_API_KEY}`;
+
             fetch(URL)
             .then(resp => resp.json())
             .then(resp => {

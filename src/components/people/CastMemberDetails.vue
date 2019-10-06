@@ -8,7 +8,7 @@ export default {
     name: "cast-member-details",
     data() {
         return {
-            id: this.$route.params.id
+            castMemberId: this.$route.params.id
         }
     },
     props: {
@@ -17,7 +17,7 @@ export default {
     computed: {
         currentCastMember() {
             return this.castMembers
-                .find(castMember => castMember.id == this.id);
+                .find(castMember => castMember.id == this.castMemberId);
         }
     }
 }

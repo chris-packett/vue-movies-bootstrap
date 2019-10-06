@@ -24,7 +24,7 @@
         </li>
     </ul>
 
-    <CastMembers :movieId="id"/>
+    <CastMembers :movieId="movieId"/>
 </div>
 </template>
 
@@ -38,7 +38,7 @@ export default {
     },
     data() {
         return {
-            id: this.$route.params.id
+            movieId: this.$route.params.id
         }
     },
     props: {
@@ -47,7 +47,7 @@ export default {
     computed: {
         currentMovie() {
             return this.movies
-                .find(movie => movie.id == this.id);
+                .find(movie => movie.id == this.movieId);
         }, 
         isAdultMovie() {
              return this.currentMovie.adult 
