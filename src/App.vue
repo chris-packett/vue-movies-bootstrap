@@ -31,8 +31,7 @@ export default {
       this.searchMovies();
     },
     getMovies: function () {
-      const API_KEY = '39df1c4c7a287510f53854893ba3d788';
-      let URL = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1`;
+      let URL = `https://api.themoviedb.org/3/movie/popular?api_key=${process.env.VUE_APP_API_KEY}&language=en-US&page=1`;
       fetch(URL)
       .then(resp => resp.json())
       .then(resp => {
@@ -40,8 +39,7 @@ export default {
       })
     },
     searchMovies: function () {
-      const API_KEY = '39df1c4c7a287510f53854893ba3d788';
-      let URL = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&language=en-US&query=${this.searchTerm}&page=1&include_adult=false`;
+      let URL = `https://api.themoviedb.org/3/search/movie?api_key=${process.env.VUE_APP_API_KEY}&language=en-US&query=${this.searchTerm}&page=1&include_adult=false`;
       fetch(URL)
       .then(resp => resp.json())
       .then(resp => {
